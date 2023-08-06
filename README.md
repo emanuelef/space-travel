@@ -24,3 +24,6 @@ flux create helmrelease sealed-secrets \
 --chart-version=">=1.15.0-0" \
 --crds=CreateReplace \
 --export > ./clusters/my-cluster/sealed-release.yaml
+
+Generate traffic
+kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://geo-3d-otel:8080/distance; done" >/dev/null
