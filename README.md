@@ -27,3 +27,5 @@ flux create helmrelease sealed-secrets \
 
 Generate traffic
 kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://geo-3d-otel:8080/distance; done" >/dev/null
+
+flux get kustomizations --watch
