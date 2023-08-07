@@ -12,6 +12,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: geo-3d-otel
-  targetNamespace: default
+  targetNamespace: test-apps
   timeout: 3m0s
   wait: true
